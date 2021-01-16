@@ -3,9 +3,9 @@
 }
 .outer {
   width: 600px;
-  height: 110vh;
-  margin: auto;
-  border: 2px solid teal;
+  height: 100vh;
+  // margin: auto;
+  // border: 2px solid teal;
   position: relative;
 }
 .App {
@@ -178,43 +178,76 @@
 }
 @keyframes moves {
   0% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   10% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   20% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   40% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   50% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   60% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   70% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   80% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   90% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
   100% {
-    top: random(550) + px;
-    left: random(550) + px;
+    top: random(530) + px;
+    left: random(530) + px;
   }
+}
+
+.highScore {
+  position: absolute;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  right: 0;
+  top: 35%;
+  // border: 1px solid #3498db;
+}
+.info {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.red {
+  background-color: red;
+}
+
+.teal {
+  background-color: teal;
+}
+
+.blue {
+  background-color: blue;
+}
+.highScore span {
+  position: relative;
+  top: -12px;
+  font-weight: bold;
 }
