@@ -107,6 +107,7 @@
   cursor: pointer;
   z-index: 1000;
 }
+
 .conatainer3 {
   width: 30px;
   height: 30px;
@@ -118,6 +119,16 @@
   border-radius: 50%;
   cursor: pointer;
   z-index: 1000;
+}
+
+.conatainer1:active {
+  background-color: rgb(141, 141, 130);
+}
+.conatainer2:active {
+  background-color: rgb(141, 141, 130);
+}
+.conatainer3:active {
+  background-color: rgb(141, 141, 130);
 }
 
 @keyframes spin {

@@ -219,8 +219,8 @@ function App() {
   
   if(width !== null){
     gid = setInterval(frameGreen,40)
-    yid = setInterval(frameYellow,15)
-    rid = setInterval(frameRed,8)
+    yid = setInterval(frameYellow,30)
+    rid = setInterval(frameRed,25)
   }
   
  },[width])
