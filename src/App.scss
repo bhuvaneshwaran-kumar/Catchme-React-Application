@@ -1,87 +1,123 @@
 * {
   user-select: none;
+  margin: 0;
+  padding: 0;
 }
+
 .outer {
-  width: 600px;
-  height: 100vh;
-  // margin: auto;
-  // border: 2px solid teal;
+  max-width: 600px;
+  min-height: 100vh;
+  border: 1px solid black;
+  margin: auto;
   position: relative;
 }
-.App {
+
+.outer .App {
   width: 100%;
-  height: 100%;
-  /* position: relative;
-   */
+  min-height: 50%;
+  position: absolute;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.conatainer1 {
-  width: 30px;
-  height: 30px;
+.outer .App .countScore {
+  width: 200px;
+  height: 200px;
+  text-align: center;
   border-radius: 50%;
-  background-color: teal;
-  position: absolute;
-  animation-name: move;
-  animation-duration: 30s;
-  z-index: 100;
-  animation-iteration-count: infinite;
-  transform: translate(-30%, -30%);
-  animation-timing-function: linear;
-}
-.conatainer2 {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgb(54, 15, 226);
-  position: absolute;
-  animation-name: movesB;
-  animation-duration: 15s;
-  z-index: 100;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.conatainer3 {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: rgb(255, 8, 8);
-  position: absolute;
-  animation-name: moves;
-  animation-duration: 10s;
-  z-index: 100;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: 0.3s;
-  animation-timing-function: linear;
-}
-.countScore {
-  height: auto;
-  display: inline-block;
-  left: 0%;
-  top: 10%;
-  /* border: 1px solid black; */
   position: relative;
 }
-.countScore h4 {
+.outer .App .countScore h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -130%);
+  transform: translate(-50%, -50%);
+  color: #596369;
 }
-.countScore h4 span {
-  color: green;
+.outer .App .countScore h3 span {
+  font-weight: bolder;
+  color: black;
 }
-.App .countScore .spinner {
+.outer .App .countScore .spinner {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
   width: 200px;
   height: 200px;
   animation: spin 2s linear infinite;
-  transition: all ease;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  top: -15px;
+}
+
+.outer .highScore {
+  width: 100%;
+  min-height: 50%;
+  position: absolute;
+  top: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.outer .highScore .row {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+  // border: 1px solid #596369;
+  width: 70%;
+}
+.outer .highScore .row span:nth-child(1) {
+  color: red;
+}
+.outer .highScore .row span:nth-child(2) {
+  color: black;
+  display: inline-block;
+  padding: 2px;
+  border: 2px solid yellow;
+}
+.outer .highScore .row span:nth-child(3) {
+  color: green;
+}
+
+// Animation Balls
+.conatainer1 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #3498db;
+  background-color: rgb(111, 173, 111);
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  cursor: pointer;
+  z-index: 1000;
+}
+.conatainer2 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #575757;
+  background-color: yellow;
+  position: absolute;
+  top: 40px;
+  border-radius: 50%;
+  left: 100px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.conatainer3 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #3498db;
+  background-color: red;
+  position: absolute;
+  position: absolute;
+  top: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 @keyframes spin {
@@ -91,163 +127,4 @@
   100% {
     transform: rotate(360deg);
   }
-}
-@keyframes move {
-  0% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  10% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  20% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  40% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  50% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  60% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  70% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  80% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  90% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-  100% {
-    top: random(500) + px;
-    left: random(500) + px;
-  }
-}
-@keyframes movesB {
-  0% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  10% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  20% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  40% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  50% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  60% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  70% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  80% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  90% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-  100% {
-    top: random(550) + px;
-    left: random(500) + px;
-  }
-}
-@keyframes moves {
-  0% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  10% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  20% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  40% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  50% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  60% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  70% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  80% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  90% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-  100% {
-    top: random(530) + px;
-    left: random(530) + px;
-  }
-}
-
-.highScore {
-  position: absolute;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  right: 0;
-  top: 35%;
-  // border: 1px solid #3498db;
-}
-.info {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-bottom: 4px;
-  display: inline-block;
-}
-.red {
-  background-color: red;
-}
-
-.teal {
-  background-color: teal;
-}
-
-.blue {
-  background-color: blue;
-}
-.highScore span {
-  position: relative;
-  top: -12px;
-  font-weight: bold;
 }
