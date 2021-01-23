@@ -38,6 +38,7 @@ function App() {
     setScore((prev)=>prev+10)
   }
 
+  // .addEventListener("click",calcSoreThree)
 
   // AN USEEFFECT WHICH HAS THE FUNCTIONS THAT MOVES THE CONTAINER.
  useEffect(()=>{
@@ -219,14 +220,15 @@ function App() {
   
   if(width !== null){
     gid = setInterval(frameGreen,40)
-    yid = setInterval(frameYellow,30)
-    rid = setInterval(frameRed,25)
+    yid = setInterval(frameYellow,20)
+    // rid = setInterval(frameRed,10)
   }
   
  },[width])
 
 
   useEffect(()=>{
+    Red.current.addEventListener("click",calcSoreThree)
     let hg = outer.current.offsetHeight
     let wd = outer.current.offsetWidth
     setHeight(hg)
@@ -236,15 +238,15 @@ function App() {
     <>
     <div ref={outer} className="outer">
    
-    <div ref={Green} onClick={calcSore} className="conatainer1">
+    <button onClick={calcSore} ref={Green}  className="conatainer1">
 
-    </div>
-    <div ref={Yellow} onClick={calcSoreTwo} className="conatainer2">
+    </button>
+    <button onClick={calcSoreTwo}  ref={Yellow}className="conatainer2">
 
-    </div>
-    <div ref={Red} onClick={calcSoreThree} className="conatainer3">
+    </button>
+    <button ref={Red} className="conatainer3">
 
-    </div>
+    </button>
     <div className="App">
 
       <div className="countScore">
