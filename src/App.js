@@ -20,6 +20,7 @@ function App() {
   const Green = useRef()
   const Yellow = useRef() 
   const Red = useRef() 
+  const brown = useRef()
 
 
 
@@ -40,6 +41,7 @@ function App() {
 
 
   // AN USEEFFECT WHICH HAS THE FUNCTIONS THAT MOVES THE CONTAINER.
+  let gid,yid,rid,bid
  useEffect(()=>{
 
   let GreenposTB = 0
@@ -48,6 +50,8 @@ function App() {
   let YellowposLR = 100
   let RedposTB = 80
   let RedposLR = 0
+  let BrownposTB = 100
+  let BrownposLR = 0
  
 
   // SETING THE ELEM MOVE IN TOP || BOTTOM AND LEFT || RIGHT --START ---//
@@ -63,10 +67,14 @@ function App() {
   let Gmoveleft = true
   let Gmovebottom = true
   let Gmovetop = false
+  let BmoveRight = false
+  let Bmoveleft = true
+  let Bmovebottom = true
+  let Bmovetop = false
   // SETING THE ELEM MOVE IN TOP || BOTTOM AND LEFT || RIGHT --END--//
 
   // A ID INCASE IF WE WANT TO STOPINTERVAL IN FUTURE.
-  let gid,yid,rid
+ 
 
   function frameGreen() {
 
@@ -216,15 +224,81 @@ function App() {
   
       }  
    
+    function frameBrown() {
+
+      if(Bmovetop){
+        if (BrownposTB < 0 ) {
+          Bmovebottom = true
+          Bmovetop = false
+        } 
+        else 
+        {
+          BrownposTB = BrownposTB - 2;
+          brown.current.style.top = BrownposTB + 'px';  
+        }
+      }
+      if(Bmovebottom){
+        if (BrownposTB > height - 30 ) {
+          Bmovebottom = false
+          Bmovetop = true
+        } 
+        else 
+        {
+          
+          BrownposTB++;
+          brown.current.style.top = BrownposTB + 'px';   
+        }
+      }
+      if(Bmoveleft){
+        if (BrownposLR  === width - 30 ) {
+          Bmoveleft = false
+          BmoveRight = true
+        } 
+        else 
+        {
+          BrownposLR ++;
+          brown.current.style.left = BrownposLR  + 'px'; 
+        }
+      }
+      if(BmoveRight){
+        if (BrownposLR  === 0) {
+          Bmoveleft = true
+          BmoveRight = false
+        } 
+        else 
+        {
+          BrownposLR --;
+          brown.current.style.left = BrownposLR  + 'px'; 
+        }
+      }
+  
+      }  
+   
   
   if(width !== null){
     gid = setInterval(frameGreen,40)
     yid = setInterval(frameYellow,30)
     rid = setInterval(frameRed,25)
+    bid = setInterval(frameBrown,25)
   }
   
  },[width])
 
+
+ function endGame(){
+    clearInterval(gid)
+    clearInterval(yid)
+    clearInterval(rid)
+    clearInterval(bid)
+    if(score >= hs){
+      alert(`🚀🚀🚀🚀Your Score : ${score} is the highest One`)
+      window.location.reload()
+    }
+    else{
+      alert("sorry : you lost 😢😢😢")
+      window.location.reload()
+    }
+ }
 
   useEffect(()=>{
     let hg = outer.current.offsetHeight
@@ -245,6 +319,9 @@ function App() {
     <div ref={Red} onClick={calcSoreThree} className="conatainer3">
 
     </div>
+    <div ref={brown} onClick={endGame} className="conatainer4">
+
+    </div>
     <div className="App">
 
       <div className="countScore">
@@ -262,7 +339,8 @@ function App() {
       <div className="row">
       <span>10 Points</span>
       <span>5 Points</span>
-      <span>1 Points</span><br/>
+      <span>1 Points</span>
+      <span>Danger</span>
       </div>
     
     </div>
