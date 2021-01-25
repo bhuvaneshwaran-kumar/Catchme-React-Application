@@ -301,6 +301,15 @@ function App() {
  }
 
   useEffect(()=>{
+    alert(`
+    Welcome to catch-me..🚀🚀🚀
+    click(catch) the moving bals and get the point's
+    🏀- 10 points
+    🟢- 1 point
+    🟡- 5 points
+    🟤- danger you're out
+    make sure you click in the center of the balls..
+    `)
     let hg = outer.current.offsetHeight
     let wd = outer.current.offsetWidth
     setHeight(hg)
